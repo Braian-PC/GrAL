@@ -1,5 +1,8 @@
 .menu-btn {
     background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
     color: #000;
     border: none;
     text-align: left;
@@ -38,4 +41,8 @@ button.bg-dark:hover i {
     transform: scale(1.5); /* Agranda las líneas del ícono */
     color: #f8f9fa; /* Opcional: Cambiar el color */
     transition: transform 0.3s ease, color 0.3s ease;
+}
+i{
+    font-size: 1.6em;
+    margin-right: 20px;
 }
