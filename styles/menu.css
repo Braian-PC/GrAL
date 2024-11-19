@@ -1,0 +1,41 @@
+.menu-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+.menu-btn img {
+    margin-right: 15px;
+    width: 40px;
+}
+.offcanvas {
+    background-color: #000; /* Fondo negro para el menú */
+    color: #fff; /* Texto blanco para el menú */
+}
+.offcanvas a {
+    color: #fff; /* Enlaces en blanco */
+}
+.offcanvas a:hover {
+    color: #00aaff; /* Color diferente al hacer hover en los enlaces */
+}
+.offcanvas-header {
+    background-color: #212529;
+    color: #fff;
+}
+
+button.bg-dark {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Efecto de agrandamiento de las líneas al pasar el mouse */
+button.bg-dark:hover i {
+    transform: scale(1.5); /* Agranda las líneas del ícono */
+    color: #f8f9fa; /* Opcional: Cambiar el color */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
