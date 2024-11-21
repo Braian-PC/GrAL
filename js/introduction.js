@@ -1,42 +1,52 @@
-
 function shrinkIntro() {
   const introSection = document.getElementById('intro');
   introSection.classList.add('shrink');
-  
+
   // Mostrar el botón del menú
   const menuButton = document.getElementById('menu-button');
-  menuButton.classList.add('visible');
+  if (menuButton) menuButton.classList.add('visible');
 
-  //Hide chevron-down
-    const chevronDown = document.querySelector('bi-chevron-down');
-    chevronDown.classList.add('shrink'); 
+  // Ocultar el chevron hacia abajo
+  const chevronDown = document.querySelector('.bi-chevron-down');
+  if (chevronDown) chevronDown.classList.add('shrink');
 
-    // Reducir titulo 
-    const persistentText = document.querySelector('description');
-    persistentText.classList.add('shrink');
+  // Reducir el texto persistente
+  const persistentText = document.querySelector('.description');
+  if (persistentText) persistentText.classList.add('shrink');
+
+  // Insertar el menú en el contenedor
+  setTimeout(() => {
+      const menuHTML = `
+          <nav class="navbar navbar-dark bg-dark menu-slide-down">
+              <div class="container-fluid d-flex align-items-center justify-content-start">
+                  <!-- Botón para abrir el panel lateral -->
+                  <button id="menu-button" class="bg-dark border-0 me-2 d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                      <i class="bi bi-list text-white"></i>
+                  </button>
+          
+                  <!-- Logo y título -->
+                  <div class="d-flex align-items-center">
+                      <img src="Irudiak/Bilingüe_negativo_alta-removebg-preview.png" alt="UPV/EHU Logo" style="height: 30px;" class="me-2">
+                      <span class="text-white">Informatika Fakultatea</span>
+                  </div>
+              </div>
+          </nav>
+      `;
+    document.getElementById('menu-container').innerHTML = menuHTML;
+  }, 500); // Retraso de 500 ms (ajustable)
 }
 
-function toggleMenu() {
-  const menu = document.getElementById('sidebarMenu');
-  menu.classList.toggle('show');
-}
 
 document.addEventListener('DOMContentLoaded', function() {  
-    const introSection = document.getElementById('intro');
-    introSection.addEventListener('click', shrinkIntro);
+  const introSection = document.getElementById('intro');
+  introSection.addEventListener('click', shrinkIntro);
 
-    // al pulsar cualquier letra del teclado o la ruedecilla del rato shrinkIntro
-    document.addEventListener('keypress', shrinkIntro);
+  // Ejecutar shrinkIntro al pulsar cualquier tecla o la rueda hacia abajo
+  document.addEventListener('keypress', shrinkIntro);
 
-    // la ruedecilla del raton pero solo para abajo
-
-    document.addEventListener('wheel', function(event) {
-        if (event.deltaY > 0) {
-            shrinkIntro();
-        }
-    });
-
-    
-    const menuButton = document.getElementById('');
-    menuButton.addEventListener('click', toggleMenu);
+  document.addEventListener('wheel', function(event) {
+      if (event.deltaY > 0) {
+          shrinkIntro();
+      }
+  });
 });

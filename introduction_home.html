@@ -137,12 +137,32 @@
       opacity: 1;
     }
 
+
+    /* Estilo inicial del menú oculto */
+.menu-slide-down {
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+/* Animación de deslizamiento */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
     
   </style>
 </head>
 <body>
       <!-- Botón para abrir el menú lateral -->
-    <div class="menu"></div>
+    <div id="menu-container"></div>
     
 
     <!-- Offcanvas Sidebar -->
