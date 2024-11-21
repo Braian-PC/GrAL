@@ -32,7 +32,9 @@ function shrinkIntro() {
               </div>
           </nav>
       `;
-    document.getElementById('menu-container').innerHTML = menuHTML;
+    const menu=document.querySelector('.menu-container.unvisible');
+    menu.innerHTML = menuHTML;
+    menu.classList.remove('unvisible');
   }, 500); // Retraso de 500 ms (ajustable)
 }
 
