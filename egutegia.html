@@ -8,15 +8,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles/menu.css">
     <link rel="stylesheet" href="styles/home.css">
+
+    <style>
+        .header::before {
+            background-image: url("Irudiak/aulas_alava_web.jpg");
+        }
+    </style>
 </head>
 <body>
 
     <!-- Botón para abrir el menú lateral -->
-    <button class="menu-btn bg-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
-        <i class="bi bi-list text-white"></i>
-        <img src="Irudiak/Bilingüe_negativo_alta-removebg-preview.png" alt="UPV/EHU Logo">
-        <span class="text-white">Informatika Fakultatea</span>
-    </button>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid d-flex align-items-center justify-content-start">
+            <!-- Botón para abrir el panel lateral -->
+            <button class="bg-dark border-0 me-2 d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                <i class="bi bi-list text-white"></i>
+            </button>
+    
+            <!-- Logo y título -->
+            <div class="d-flex align-items-center">
+                <img src="Irudiak/Bilingüe_negativo_alta-removebg-preview.png" alt="UPV/EHU Logo" style="height: 30px;" class="me-2">
+                <span class="text-white">Informatika Fakultatea</span>
+            </div>
+        </div>
+    </nav>
+    
 
     <!-- Offcanvas Sidebar -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
@@ -44,6 +60,9 @@
                                 <a href="#" class="text-decoration-none">Memoria</a>
                             </li>
                             <li class="list-group-item">
+                                <a href="egutegia.html" class="text-decoration-none">Egutegia</a>
+                            </li>
+                            <li class="list-group-item">
                                 <a href="#" class="text-decoration-none">Autoebaluazioa</a>
                             </li>
                         </ul>
@@ -60,11 +79,8 @@
         </div>
     </div>
 
-    <div class="card text-bg-dark">
-        <img src='Irudiak/aulas_alava_web.jpg' class="card-img" alt="UPV/EHU arautegia" style="border-radius: 0;">
-        <div class="card-img-overlay bg-dark bg-opacity-50">
-            <h1 class="card-title text-center text-white py-4">Gradu Amaierako Lanaren <br> EGUTEGIA</h1>
-        </div>
+    <div class="header bg-dark bg-opacity-50" id="intro">
+        <h1 class="persistent-text mb-4 text-white"> Gradu Amaierako Lana <br> Egutegia</h1>
     </div>
 
     <div class="azalpena">
@@ -132,6 +148,7 @@
                 </ul>
             </div>
         </div>
+    </div>
 
         <footer class="bg-dark text-light py-4 mt-auto">
             <div class="container">

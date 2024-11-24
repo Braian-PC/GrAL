@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles/menu.css">
     <link rel="stylesheet" href="styles/home.css">
+
+    <style>
+        .header::before {
+            background-image: url("Irudiak/aulas_alava_web.jpg");
+        }
+    </style>
+
 </head>
 <body>
     <!-- Botón para abrir el menú lateral -->
@@ -72,13 +79,11 @@
         </div>
     </div>
 
-
-    <div class="card text-bg-dark">
-        <img src='Irudiak/aulas_alava_web.jpg' class="card-img" alt="UPV/EHU arautegia" style="border-radius: 0;">
-        <div class="card-img-overlay bg-dark bg-opacity-50">
-            <h1 class="card-title text-center text-white py-4">Gradu Amaierako Lanaren <br> Araudiak</h1>
-        </div>
+    <div class="header bg-dark bg-opacity-50" id="intro">
+        <h1 class="persistent-text mb-4 text-white">Gradu Amaierako Lanaren <br> Araudiak</h1>
     </div>
+
+
 
     <div class="azalpena">
         <div class="container mt-4">
@@ -95,29 +100,27 @@
         </div>
     </div>
 
-    <div class="container mt-4">
-        <div class="d-flex flex-column align-items-center">
-            <div class="img-container mb-3 d-flex align-items-center justify-content-center">
-                <img src="\Irudiak\UPV_EHU.jpg" class="img-thumbnail" alt="...">
-            </div>
-            <div class="btn btn-secondary w-75 mb-3 d-flex align-items-center justify-content-center">
-                UPV/EHU-ko Araudi Orokorrak
-            </div>
-
-            <div class="img-container mb-3 d-flex align-items-center justify-content-center">
-                <img src="\Irudiak\facultad nevada.jpg" class="img-thumbnail" alt="...">
-            </div>
-            <div class="btn btn-secondary w-75 mb-3 d-flex align-items-center justify-content-center">
-                Informatika Fakultateko araudiak
+    <div class="container align-items-center">
+        <div class="row align-items-center row-cols-1 row-cols-lg-2">
+            <div class="col">
+                <div class="img-container mb-3 d-flex align-items-center justify-content-center">
+                    <img src="\Irudiak\UPV_EHU.jpg" class="img-thumbnail" alt="...">
+                </div>
+                <div class="btn btn-secondary mb-3 d-flex align-items-center justify-content-center">
+                    UPV/EHU-ko Araudi Orokorrak
+                </div>
             </div>
 
-            <div class="img-container mb-3 d-flex align-items-center justify-content-center">
-                <img src="\Irudiak\autoebaluazioa.jpg" class="img-thumbnail" alt="...">
-            </div>
-            <div class="btn btn-secondary w-75 mb-3 d-flex align-items-center justify-content-center">
-                Autoebaluazio Galdetegia
+            <div class="col">
+                <div class="img-container mb-3 d-flex align-items-center justify-content-center">
+                    <img src="\Irudiak\facultad nevada.jpg" class="img-thumbnail" alt="...">
+                </div>
+                <div class="btn btn-secondary mb-3 d-flex align-items-center justify-content-center">
+                    Informatika Fakultateko araudiak
+                </div>
             </div>
         </div>
+
     </div>
 
     <footer class="bg-dark text-light py-4 mt-auto">
