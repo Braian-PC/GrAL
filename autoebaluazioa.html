@@ -57,6 +57,20 @@
             background-color: #ffe6e6;
             border-radius: 4px;
         }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-button:hover {
+            color: red;
+        }
     </style>
 
 </head>
@@ -260,14 +274,17 @@
         </div>
       </footer>
       <div id="result-modal">
-        <div id="result-content">
+        <div id="result-content" class="position-relative">
+            <!-- Botón de cierre -->
+            <button id="close-modal" class="close-button">×</button>
             <h2 class="text-center mb-4">ZORIONAK</h2>
-            <p class="text-center">Zure erantzun zuzenak: <span id="correct-answers"></span></p>
+            <p class="text-center">Zure erantzun zuzenak: <span id="correct-answers">0</span></p>
             <div class="text-center mt-4">
                 <button id="see-results" class="btn btn-primary">Ikusi emaitzak</button>
             </div>
         </div>
     </div>
+    
 
    
     <script>
@@ -275,6 +292,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const resultModal = document.getElementById('result-modal');
     const warningMessage = document.getElementById('warning-message');
     const form = document.querySelector('form');
+    const closeModalButton = document.getElementById('close-modal');
 
     resultModal.style.display = 'none';
     warningMessage.style.display = 'none';
@@ -366,11 +384,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         form.querySelector('button[type="submit"]').style.display = 'none'; // Ocultar botón de enviar.
     });
-
+    
     resultModal.addEventListener('click', function(event) {
         if (event.target === resultModal) {
             resultModal.style.display = 'none';
         }
+    });
+
+    closeModalButton.addEventListener('click', function () {
+        resultModal.style.display = 'none';
     });
 });
 
