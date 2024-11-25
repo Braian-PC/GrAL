@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduko Amaierako Lana</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/home.css">
+
+    <style>
+        .header::before {
+            background-image: url("Irudiak/gral_memoriak_fondo.jpg");
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón para abrir el menú lateral -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid d-flex align-items-center justify-content-start">
+            <!-- Botón para abrir el panel lateral -->
+            <button class="bg-dark border-0 me-2 d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                <i class="bi bi-list text-white"></i>
+            </button>
+    
+            <!-- Logo y título -->
+            <div class="d-flex align-items-center">
+                <img src="Irudiak/Bilingüe_negativo_alta-removebg-preview.png" alt="UPV/EHU Logo" style="height: 30px;" class="me-2">
+                <span class="text-white">Informatika Fakultatea</span>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarMenuLabel">Menú</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="Home.html" class="text-decoration-none">Home</a>
+                </li>
+                
+                <!-- Dropdown Submenu -->
+                <li class="list-group-item">
+                    <button class="btn btn-link text-decoration-none p-0" data-bs-toggle="collapse" data-bs-target="#submenu1" aria-expanded="false" aria-controls="submenu1">
+                        ▼ Graduaren Amaierako Lana
+                    </button>
+                    <div class="collapse" id="submenu1">
+                        <ul class="list-group ms-3 mt-2">
+                            <li class="list-group-item">
+                                <a href="arauak.html" class="text-decoration-none">Arauak</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="text-decoration-none">Memoria</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="egutegia.html" class="text-decoration-none">Egutegia</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="text-decoration-none">Autoebaluazioa</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none">Bibliografia</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="header bg-dark bg-opacity-50" id="intro">
+        <h1 class="persistent-text mb-4 text-white"> Gradu Amaierako Lana <br> Aurreko GrAL-en memorien kontsulta</h1>
+    </div>
+
+    <div class="azalpena">
+        <div class="container mt-4">
+            <div class="d-flex flex-column align-items-center">
+                <div class="col-12 col-md-6 mx-auto">     
+                        <p class="align-items-center text-center"> 
+                            Aurreko urteeran egindako GrALen memoriak kontsulta ditzazkezu hemen
+                        </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Bilatzailea -->
+    <div class="buscador bg-light py-4">
+        <div class="container">
+            <h5 class="text-center mb-4">Bilatu GrAL-a</h5>
+            <form class="row justify-content-center">
+                <!-- Testua -->
+                <div class="col-12 col-md-4 mb-3">
+                    <input type="text" class="form-control" placeholder="Bilatu hitz gakoekin" aria-label="Search">
+                </div>
+                <!-- Urtea -->
+                <div class="col-12 col-md-3 mb-3">
+                    <select class="form-select" aria-label="Urtea">
+                        <option selected disabled>Urtea</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                </div>
+                <!-- Gradua -->
+                <div class="col-12 col-md-3 mb-3">
+                    <select class="form-select" aria-label="Gradua">
+                        <option selected disabled>Gradua</option>
+                        <option value="adimen-artifiziala">Adimen Artifiziala</option>
+                        <option value="informatikaren-ingeniaritza">Informatikaren Ingeniaritza</option>
+                    </select>
+                </div>
+                <!-- Bilatzailea -->
+                <div class="col-12 text-center">
+                    <button type="button" id="searchButton" class="btn btn-primary">Bilatu</button>
+                </div>                
+            </form>
+        </div>
+    </div>
+    <div class="container mt-4" id="resultsContainer" style="display: none;">
+        <h5 class="text-center mb-4">Bilaketaren Emaitzak</h5>
+        <ul class="list-group">
+            <li class="list-group-item bg-light border rounded mb-3">
+                <h6>Adimen Artifizialaren Aplikazioak 2023</h6>
+                <p>Gradu Amaierako Lana 2023 - Adimen Artifiziala</p>
+                <p><strong>Egilea:</strong> Jon Doe</p>
+                <p><strong>Laburpena:</strong> Proiektu honetan, Adimen Artifizialaren hainbat aplikazio aztertzen dira...</p>
+                <a href="https://addi.ehu.es/handle/10810/13137" class="btn btn-link">Irakurri gehiago</a>
+            </li>
+            <li class="list-group-item bg-light border rounded mb-3">
+                <h6>Informatikaren Ingeniaritzako Sistema bat 2022</h6>
+                <p>Gradu Amaierako Lana 2022 - Informatikaren Ingeniaritza</p>
+                <p><strong>Egilea:</strong> Jane Smith</p>
+                <p><strong>Laburpena:</strong> Proiektu honek sistemaren diseinua eta garapena aurkezten du...</p>
+                <a href="https://addi.ehu.es/handle/10810/13137" class="btn btn-link">Irakurri gehiago</a>
+            </li>
+        </ul>
+    </div>
+
+        <footer class="bg-dark text-light py-4 mt-auto">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>Helbidea</h5>
+                  <p>Barrio Sarriena s/n , 48940 Leioa (Bizkaia)</p>
+                </div>
+                <div class="col-md-3">
+                  <h5>Jar zaitez harremanetan</h5>
+                  <p>Email: info@adibidea.com</p>
+                  <p>Teléfono: +34 123 456 789</p>
+                  <p> Informazio gehiago: <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="">sakatu emen.</a> </p>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <p class="mb-0">&copy; 2024-2025 PKE ikasleak. Bootstrap lantzen.</p>
+              </div>
+            </div>
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function () {
+            const resultsContainer = document.getElementById('resultsContainer');
+            resultsContainer.style.display = 'block'; // Mostrar resultados al hacer clic
+        });
+    </script>
+</body>
+</html>
