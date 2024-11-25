@@ -13,6 +13,15 @@
         .header::before {
             background-image: url("/Irudiak/UPV_EHU_araudiak.jpg");
         }
+
+        .btn-white {
+            background-color: #fff;
+            border: none;                /* Elimina todos los bordes */
+            border-bottom: 2px solid #ccc; /* Solo deja un borde inferior */
+            color: #000;                /* Color del texto */
+            border-radius: 0;           /* Asegura que los bordes no sean redondeados */
+            box-shadow: none;           /* Elimina sombras adicionales */
+        }
     </style>
 
 </head>
@@ -101,33 +110,90 @@
 
     <!-- Content Sections -->
     <div class="container mt-4">
-        <div class="d-flex flex-column align-items-center">
-            <!-- Arauak Section -->
-                <div class="btn btn-secondary w-75 mb-3 d-flex align-items-center justify-content-center">
-                  <img src="https://img.icons8.com/ios-filled/50/000000/scales.png" alt="Rules Icon" class="me-3">
-                  Arauak
-            </div>
-           
+        <h2>Sarrera</h2>
+        <p>
+            822/2021 Errege Dekretuak, irailaren 28koak, adierazten duen gisa ondorengoa da Gradu Amaierako Lanaren definizioa: “El trabajo de fin de Grado, de carácter obligatorio y cuya superación es imprescindible para la obtención del título oficial, tiene como objetivo esencial la demostración por parte del o la estudiante del dominio y aplicación de los conocimientos, competencias y habilidades definitorios del título universitario oficial de Grado. Este trabajo de fin de Grado dispondrá de un mínimo de 6 créditos para todos los títulos, y un máximo de 24 créditos para los títulos de 240 créditos, de 30 créditos en los títulos de 300 créditos y de 36 créditos en los títulos de 360 créditos. Deberá desarrollarse en la fase final del plan de estudios, siguiendo los criterios que cada universidad o centro establezca. Asimismo, los trabajos de fin de Grado deberán ser defendidos en un acto público, siguiendo la normativa que a tal efecto establezca el centro o en su caso la universidad.”
+        </p>
+        <p>
+            Laburbilduz, Gradu Amaierako Lana(GrAL deituko dioguna) ondorengoa da: edozein graduko titulua lortu arren ikasle orok BANAKA garatu behar duen eginbeharra, graduan zehar garatu dituzten ahalmen, gaitasun eta trebetasunak frogatzeko helburua duena. Graduak ikastaroan edukiko duen kreditu pisua graduaren guztirako kredituen araberakoa izango da (24 240 kredituko graduetan, 30 300 kredituetakoetan…). Lan hau graduaren amaierako etapa iristerakoan burutuko da eta ekintza publiko batean azaldua eta defendatu izan beharko da. 
+        </p>
+        <p>
+            Beraz, ikasleek, banakako proiektu, memoria edo azterlan original bat garatu beharko dute, beti ere zuzendari baten edo gehiagoren gida eta laguntza jasoz ( bai proiektua garatzeko prozesuaren aldera bai defentsa prestatzeko). Oro har, GrALa defendatu eta ebaluatzeko, egiaztatua izan behar da ikasleak ikasketa planaren gainerako gai guztiak gaindituta dituela eta, hortaz, titulua lortzeko behar diren kreditu guztiak dituela(GrAL-arenak izan ezik). Hala ere, eta ikastegiak bere arautegian ezarrita duela kontuan edukiz, titulua lortzeko kreditu guztiak ez dituzten ikasleei gradu amaierako lana egiteko aukera eskaini diezaieke; beti ere ikasketa planean geratzen zaizkien irakasgai guztietarako matrikula eginda badute. 
+        </p>
+        <p class="last-p">
+            Bestalde, eta kontrako aurrezarri ez dela kontuan edukita, GRALa Jabetza Intelektualari buruzko legeak babestutako lana da eta ikaslea izango da lanaren titularra.
+        </p>
+        
+        <div class="content">
+            <!-- Botón para mostrar/ocultar -->
+            <button class="btn btn-white w-100 mb-3 d-flex justify-content-between align-items-center" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#gral1" 
+                aria-expanded="false" 
+                aria-controls="gral1">
+                    <h4>GrAL motak</h4>
+                    <i class="bi bi-chevron-down"></i>
+            </button>
+            <!-- Contenido oculto -->
+            <div class="collapse" id="gral1">
+                <div class="p-3"> <!-- Eliminamos la clase "card card-body" -->
+                    <p>
+                        Gradu Amaierako Lanaren izaera beti izango  lan akademikoa 
+                        eta ikasketa planean jasotako gaitasunak eskuratzera bideratuak;
+                        hala ere, ikerketa lanak jarduteko aukera eduki dezake. GRALa unibertsitatetik 
+                        kanpoko erakunde batekin egin ahal izango da (praktikak, prestakuntza duala, etab.), 
+                        noski ere aldez aurretik lankidetza hitzarmena sinatuz gero. Bestalde, ikastegiek zehaztu  
+                        dezakete zein motatakoak izan daitezkeen lanak. 
 
-            <!-- Egutegia Section -->
-            <div class="btn btn-secondary w-75 mb-3 d-flex align-items-center justify-content-center">
-                <img src="https://img.icons8.com/ios-filled/50/000000/calendar.png" alt="Calendar Icon" class="me-3">
-                Egutegia
-            </div>
-
-            <!-- Memoria Section -->
-            <div class="btn btn-secondary w-75 mb-3 d-flex align-items-center justify-content-center">
-                <img src="https://img.icons8.com/ios-filled/50/000000/contract.png" alt="Memory Icon" class="me-3">
-                Memoria
-            </div>
-
-            <!-- Autoebaluazioa Section -->
-            <div class="btn btn-secondary w-75 mb-3 d-flex align-items-center justify-content-center">
-                <img src="https://img.icons8.com/ios-filled/50/000000/checked.png" alt="Self-Evaluation Icon" class="me-3">
-                Autoebaluazioa
+                    </p>
+                </div>
             </div>
         </div>
+
+
+        <div class="content">
+            <!-- Botón para mostrar/ocultar -->
+            <button class="btn btn-white w-100 mb-3 d-flex justify-content-between align-items-center" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#gral2" 
+                aria-expanded="false" 
+                aria-controls="gral2">
+                    <h4>GrAL-a burutzeko irizpideak</h4>
+                    <i class="bi bi-chevron-down"></i>
+            </button>
+            <!-- Contenido oculto -->
+            <div class="collapse" id="gral2">
+                <div class="p-3"> <!-- Eliminamos la clase "card card-body" -->
+                    <p>
+                        Gradu amaierako lanak garatu ondoko irizpideak betetzen ahaleginduko da ikaslea, eta horretarako lanaren zuzendariaren laguntza izango du:
+                        <ol>
+                            <li>Idazkera:</li>
+                                <ol type="a">
+                                    <li>UPV/EHUren erakunde irudia eta EHU tipografia erabiliko du.</li>
+                                    <li>Hizketa inklusiboa erabiltzea.</li>
+                                    <li>UPV/EHUren kanpoko jarduera akademiko batzuetatik (praktikak, prestakuntza duala, etab.) eratorritako informazioa erabiltzen duten lanen kasuan, pertsonei buruzko informazioa akademikoki justifikatua badago erabiliko da soilik; eta, hala eginez gero, inplikatutako pertsonaren anonimotasuna bermatuz. </li>
+                                </ol>
+                                                    
+                        
+                        
+      
+                            <li> Lanaren helburua benetako  errolda/arazo/erronka-ri aurre egitea sustatuko da. Baita 2030 EHU agendarekin lerrokatutako gaitegiekin.</li>
+                            <li>Ikasketa planak diseinatzeko printzipio gidariak garatuz, gradu amaierako lan guztietan jasoko da egindako lanari buruzko gogoeta bat,
+                                printzipio eta balio demokratikoei eta Garapen Jasangarrirako Helburu-ei jarraituz egina. Gogoetak 200 hitz izango ditu gutxienez, eta atal zehatz bat edukiko du idatzian.</li>
+                        </ol>
+                        
+                  
+                       
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        
     </div>
+    
 
 
     <footer class="bg-dark text-light py-4 mt-auto">

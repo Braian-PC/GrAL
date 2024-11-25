@@ -133,3 +133,21 @@ a {
 .edukia {
     padding: 40px;
 }
+
+p {
+    text-indent: 1.5em; /* Ajusta el tamaño de la sangría */
+    margin-top: 0;      /* Opcional: ajusta los márgenes */
+    margin-bottom: 1em; /* Opcional: espacio entre párrafos */
+}
+
+.last-p{
+    margin-bottom: 40px;
+}
+
+.content {
+    margin-bottom: 40px;
+}
+
+li {
+    margin-bottom: 1em;
+}
