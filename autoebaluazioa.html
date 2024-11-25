@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduko Amaierako Lana</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/home.css">
+
+    <style>
+        .header::before {
+            background-image: url("/Irudiak/Facultad\ nevada.jpg");
+        }
+        .container, .container-fluid {
+            padding-left: 5rem !important;
+        }
+        @media (max-width: 768px) {
+            .container, .container-fluid {
+                padding-left: 2rem !important;
+            }
+        }
+        .container form {
+            margin-bottom: 4rem !important;
+        }
+        #result-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #result-content {
+            background-color: #fefefe;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            max-width: 500px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #warning-message {
+            display: none;
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #ffe6e6;
+            border-radius: 4px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Botón para abrir el menú lateral -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid d-flex align-items-center justify-content-start">
+            <!-- Botón para abrir el panel lateral -->
+            <button class="bg-dark border-0 me-2 d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                <i class="bi bi-list text-white"></i>
+            </button>
+    
+            <!-- Logo y título -->
+            <div class="d-flex align-items-center">
+                <img src="Irudiak/Bilingüe_negativo_alta-removebg-preview.png" alt="UPV/EHU Logo" style="height: 30px;" class="me-2">
+                <span class="text-white">Informatika Fakultatea</span>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarMenuLabel">Menú</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="Home.html" class="text-decoration-none">Home</a>
+                </li>
+                
+                <!-- Dropdown Submenu -->
+                <li class="list-group-item">
+                    <button class="btn btn-link text-decoration-none p-0" data-bs-toggle="collapse" data-bs-target="#submenu1" aria-expanded="false" aria-controls="submenu1">
+                        ▼ Graduaren Amaierako Lana
+                    </button>
+                    <div class="collapse" id="submenu1">
+                        <ul class="list-group ms-3 mt-2">
+                            <li class="list-group-item">
+                                <a href="arauak.html" class="text-decoration-none">Arauak</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="text-decoration-none">Memoria</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="egutegia.html" class="text-decoration-none">Egutegia</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="autoebaluazioa.html" class="text-decoration-none">Autoebaluazioa</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none">Bibliografia</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#" class="text-decoration-none">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="header bg-dark bg-opacity-50" id="intro">
+        <h1 class="persistent-text mb-4 text-white"> Informatika Fakultateko <br> Gradu Amaierako Lana-ren <br> Autoebaluazioa</h1>
+    </div>
+
+    <div class="azalpena">
+        <div class="container mt-4">
+            <div class="d-flex flex-column align-items-center">
+                <div class="col-12 col-md-6 mx-auto">   
+                        <p class="align-items-center text-center"> 
+                            Zenbat badakizu GrALari buruz? Frogatu zure ezagutza galdetegi honekin:
+                        </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Gradu Amaierako Lanari buruzko galdetegia</h2>
+
+        <div id="warning-message">Mesedez, erantzun galdera guztiak!</div>
+
+        <form>
+            <div class="mb-3">
+                <p>1. Gradu Amaierako Lanan matrikulatuz gero, zenbat konbokatorietan parte artzeko eskubidea du ikasleak?</p>
+                <div>
+                    <label><input type="radio" name="question1" value="a"> Bi.</label><br>
+                    <label><input type="radio" name="question1" value="b"> Edozein.</label><br>
+                    <label><input type="radio" name="question1" value="c"> Bat.</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p>2. Behin matrikulatutako Gradu Amaierako Lanean ez aurkezteko kasuan edo suspenditzeko kasuan, berriz matrikulatzeko aukera al dut?</p>
+                <div>
+                    <label><input type="radio" name="question2" value="a"> Bai.</label><br>
+                    <label><input type="radio" name="question2" value="b"> Ez.</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p>3. Gradu Amaierako Lana zenbat pertsonako taldetan garatu beharko da?</p>
+                <div>
+                    <label><input type="radio" name="question3" value="a"> 5 pertsonetako taldetan, normalean.</label><br>
+                    <label><input type="radio" name="question3" value="b"> 3 ikaskideen artean.</label><br>
+                    <label><input type="radio" name="question3" value="c"> GrAL-a proiektu indibiduala da.</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p>4. Ingeniaritza Informatiko Fakultateak eskaintzen dituen graduetan beharrezkoa al da Gradu Amaierako Lana gauzatzea?</p>
+                <div>
+                    <label><input type="radio" name="question4" value="a"> Ez, beste irakasgai ugari gauzatuz konbalidatu daiteke.</label><br>
+                    <label><input type="radio" name="question4" value="b"> Bai, GrAL-a gauzatzea beharrezkoa da gradua gainditzeko.</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p>5. Zenbateko kreditu lan-karga du “irakasgai” honek Ingeniaritza Informatikoko fakultateko graduetan?</p>
+                <div>
+                    <label><input type="radio" name="question5" value="a"> 12 kreditu.</label><br>
+                    <label><input type="radio" name="question5" value="b"> 18 kreditu.</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p>6. Ingenieritza Informatiko Fakultateak eskaintzen dituen graduetan, GrAL-aren defentsak zenbateko iraupena edukitzea gomendatzen da?</p>
+                <div>
+                    <label><input type="radio" name="question6" value="a"> 30 minutu gutxienez.</label><br>
+                    <label><input type="radio" name="question6" value="b"> 20 minutu.</label><br>
+                    <label><input type="radio" name="question6" value="c"> Ordu bateko iraupena baino gutxiago edukitzea nahikoa da.</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p>7. Ondorio etikoak dituen Gradu Amaierako Lan bat garatzerako orduan, dagokion jarraibide etiko espezifikoak jarraitzea ebaluagarria izango da?</p>
+                <div>
+                    <label><input type="radio" name="question7" value="a"> Bai, beti.</label><br>
+                    <label><input type="radio" name="question7" value="b"> Bai, baina soilik arau garrantzizkoak ez betetzea edukiko dute kaltea epaimahien ebaluazioan.</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p>8. Zein izango da zuzendariaren helburu/egin-behar orokorra?</p>
+                <div>
+                    <label><input type="radio" name="question8" value="a"> Besteak beste, ikasleari lanaren ezaugarriak azaltzea; lana egiteko orientazioa ematea; zehaztutako helburuak betetzen direla zaintzea; lanaren jarraipena egitea.</label><br>
+                    <label><input type="radio" name="question8" value="b"> Ikasleari lanaren garapenean modu “aktibo” batean laguntzea (hau da proiektua egitea).</label><br>
+                    <label><input type="radio" name="question8" value="c"> Zuzendariak ez du zertan ikaslea lagundu behar.</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p>9. Zein hizkuntzatan burutuko da Gradu Amaierako Lanaren defentsa?</p>
+                <div>
+                    <label><input type="radio" name="question9" value="a"> Gazteleraz, Euskeraz edo Ingelesez; ez du axola zein.</label><br>
+                    <label><input type="radio" name="question9" value="b"> Gordekinak idatzi diren hizkuntza berdinean beti.</label><br>
+                    <label><input type="radio" name="question9" value="c"> Edozein hizkuntzatan, beti ere fakultatea epaimahia sortseko gai den.</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p>10. Gradu Amaierako Lanaren defentsa publikoa nahitaezkoa al da?</p>
+                <div>
+                    <label><input type="radio" name="question10" value="a"> Bai.</label><br>
+                    <label><input type="radio" name="question10" value="b"> Ez.</label>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">Bidali</button>
+            </div>
+        </form>
+    </div>
+
+
+    <footer class="bg-dark text-light py-4 mt-auto">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Helbidea</h5>
+              <p>Barrio Sarriena s/n , 48940 Leioa (Bizkaia)</p>
+            </div>
+            <div class="col-md-3">
+              <h5>Jar zaitez harremanetan</h5>
+              <p>Email: info@adibidea.com</p>
+              <p>Teléfono: +34 123 456 789</p>
+              <p> Informazio gehiago: <a href="/aboutUs.html" class="">sakatu hemen.</a> </p>
+            </div>
+          </div>
+          <div class="text-center mt-3">
+            <p class="mb-0">&copy; 2024-2025 PKE ikasleak. Bootstrap lantzen.</p>
+          </div>
+        </div>
+      </footer>
+      <div id="result-modal">
+        <div id="result-content">
+            <h2 class="text-center mb-4">ZORIONAK</h2>
+            <p class="text-center">Zure erantzun zuzenak: <span id="correct-answers"></span></p>
+            <div class="text-center mt-4">
+                <button id="see-results" class="btn btn-primary">Ikusi emaitzak</button>
+            </div>
+        </div>
+    </div>
+
+   
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const resultModal = document.getElementById('result-modal');
+    const warningMessage = document.getElementById('warning-message');
+    const form = document.querySelector('form');
+
+    resultModal.style.display = 'none';
+    warningMessage.style.display = 'none';
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        try {
+            let isComplete = true;
+            const answers = [];
+
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="question${i}"]:checked`);
+                if (!selected) {
+                    isComplete = false;
+                    break; // Salimos del bucle si falta alguna respuesta.
+                }
+                answers.push(selected.value); // Agregamos la respuesta seleccionada.
+            }
+
+            if (!isComplete) {
+                warningMessage.style.display = 'block';
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return; // Detenemos la ejecución si falta alguna respuesta.
+            }
+
+            // Ocultamos el mensaje de advertencia si todo está completo.
+            warningMessage.style.display = 'none';
+
+            const correctAnswers = ['a', 'a', 'c', 'b', 'b', 'a', 'a', 'a', 'b', 'a'];
+            let score = 0;
+
+            for (let i = 0; i < answers.length; i++) {
+                if (answers[i] === correctAnswers[i]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('correct-answers').textContent = score;
+            resultModal.style.display = 'flex';
+
+        } catch (error) {
+            console.error('Error en la validación del formulario:', error);
+        }
+    });
+
+    const seeResults = document.getElementById('see-results');
+    seeResults.addEventListener('click', function () {
+        resultModal.style.display = 'none';
+
+        const allInputs = form.querySelectorAll('input[type="radio"]');
+        allInputs.forEach(input => {
+            input.disabled = true; // Deshabilitamos los inputs tras mostrar resultados.
+        });
+
+        const correctAnswers = ['a', 'a', 'c', 'b', 'b', 'a', 'a', 'a', 'b', 'a'];
+
+        for (let i = 1; i <= 10; i++) {
+            const selectedAnswer = document.querySelector(`input[name="question${i}"]:checked`);
+            const questionDiv = document.querySelector(`input[name="question${i}"]`).closest('.mb-3');
+
+            if (selectedAnswer && selectedAnswer.value === correctAnswers[i - 1]) {
+                questionDiv.style.backgroundColor = '#dff0d8';
+                questionDiv.style.padding = '10px';
+                questionDiv.style.borderRadius = '5px';
+                const correctLabel = document.createElement('div');
+                correctLabel.textContent = '✓ Zuzena';
+                correctLabel.style.color = '#3c763d';
+                correctLabel.style.fontWeight = 'bold';
+                correctLabel.style.marginTop = '5px';
+                questionDiv.appendChild(correctLabel);
+            } else {
+                questionDiv.style.backgroundColor = '#f2dede';
+                questionDiv.style.padding = '10px';
+                questionDiv.style.borderRadius = '5px';
+                const incorrectLabel = document.createElement('div');
+                incorrectLabel.textContent = '✗ Okerra - Erantzun zuzena: ' + 
+                    questionDiv.querySelector(`input[value="${correctAnswers[i - 1]}"]`)
+                    .parentElement.textContent.trim();
+                incorrectLabel.style.color = '#a94442';
+                incorrectLabel.style.fontWeight = 'bold';
+                incorrectLabel.style.marginTop = '5px';
+                questionDiv.appendChild(incorrectLabel);
+            }
+        }
+
+        form.querySelector('button[type="submit"]').style.display = 'none'; // Ocultar botón de enviar.
+    });
+
+    resultModal.addEventListener('click', function(event) {
+        if (event.target === resultModal) {
+            resultModal.style.display = 'none';
+        }
+    });
+});
+
+</script>
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
