@@ -1,11 +1,9 @@
-.disclaimer {
-    padding: 10px;
-    background-color: lightgray;
-}
-.disclaimer h3 {
+
+.disclaimer{
     color: red;
     font-weight: bold;
 }
+
 .list-group-item {
     background-color: #000;
     border: none;
@@ -70,7 +68,7 @@
     margin-top: 40px;
 }
 .azalpena {
-    padding: 10px;
+    padding: 40px;
     background-color: lightgray;
 }
 
@@ -80,4 +78,58 @@ footer{
 a {
     color: #00aaff;
     text-decoration: none;
+}
+
+/* Estilo general para la línea divisoria */
+.border-divider {
+    position: relative;
+}
+
+/* Línea vertical para columnas en la misma fila */
+.border-divider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgb(83, 83, 83); /* Color de la línea */
+}
+
+
+.border-divider:last-child::after {
+    display: none;
+}
+
+/* Línea horizontal para pantallas pequeñas (una columna por fila) */
+@media (max-width: 992px) {
+    .border-divider::after {
+        width: 100%; /* Línea horizontal */
+        height: 1px;
+        top: auto;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+/* Aumentar separación entre columnas horizontalmente */
+.col {
+    margin-right: 1rem; /* Espacio a la derecha */
+}
+
+/* Eliminar margen derecho de la última columna en una fila */
+.col:last-child {
+    margin-right: 0;
+}
+
+/* Separación vertical en pantallas pequeñas */
+@media (max-width: 992px) {
+    .col {
+        margin-right: 0; /* Elimina margen horizontal */
+        margin-bottom: 3rem; /* Espacio entre filas */
+    }
+}
+
+.edukia {
+    padding: 40px;
 }
