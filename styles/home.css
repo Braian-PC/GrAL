@@ -93,6 +93,9 @@ a {
     color: #00aaff;
     text-decoration: none;
 }
+strong {
+    font-weight: bold;
+}
 
 /* Estilo general para la línea divisoria */
 .border-divider {
