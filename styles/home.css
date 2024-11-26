@@ -15,6 +15,15 @@
     color: #00aaff; /* Color al pasar el ratón */
 }
 
+p {
+    text-indent: 1.5em; /* Ajusta el tamaño de la sangría */
+    margin-top: 0;      /* Opcional: ajusta los márgenes */
+    margin-bottom: 1em; /* Opcional: espacio entre párrafos */
+}
+
+.last-p{
+    margin-bottom: 40px;
+}
 
 .header {
     position: relative;
@@ -75,6 +84,11 @@
 footer{
     width: 100%;
 }
+footer p{
+    text-indent:0; 
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
 a {
     color: #00aaff;
     text-decoration: none;
@@ -134,15 +148,6 @@ a {
     padding: 40px;
 }
 
-p {
-    text-indent: 1.5em; /* Ajusta el tamaño de la sangría */
-    margin-top: 0;      /* Opcional: ajusta los márgenes */
-    margin-bottom: 1em; /* Opcional: espacio entre párrafos */
-}
-
-.last-p{
-    margin-bottom: 40px;
-}
 
 .content {
     margin-bottom: 40px;
