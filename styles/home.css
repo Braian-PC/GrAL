@@ -27,8 +27,8 @@ p {
 
 .header {
     position: relative;
-    height: 35vh;
-    background-size: 35vh;
+    height: 40vh;
+    background-size: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
