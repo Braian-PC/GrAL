@@ -50,7 +50,7 @@
                 <!-- Dropdown Submenu -->
                 <li class="list-group-item">
                     <button class="btn btn-link text-decoration-none p-0" data-bs-toggle="collapse" data-bs-target="#submenu1" aria-expanded="false" aria-controls="submenu1">
-                        ▼ Graduaren Amaierako Lana
+                        <i class="bi bi-chevron-down" style="font-size: 12px;"></i> Graduaren Amaierako Lana
                     </button>
                     <div class="collapse" id="submenu1">
                         <ul class="list-group ms-3 mt-2">
@@ -64,7 +64,7 @@
                                 <a href="egutegia.html" class="text-decoration-none">Egutegia</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="autoebaluazioa.html" class="text-decoration-none">Autoebaluazioa</a>
+                                <a style="color: rgb(5, 166, 235)" href="#" class="text-decoration-none">Autoebaluazioa</a>
                             </li>
                         </ul>
                     </div>
@@ -231,9 +231,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 const selected = document.querySelector(`input[name="question${i}"]:checked`);
                 if (!selected) {
                     isComplete = false;
-                    break; // Salimos del bucle si falta alguna respuesta.
+                    break;
                 }
-                answers.push(selected.value); // Agregamos la respuesta seleccionada.
+                answers.push(selected.value); 
             }
 
             if (!isComplete) {
@@ -242,10 +242,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     top: 0,
                     behavior: 'smooth'
                 });
-                return; // Detenemos la ejecución si falta alguna respuesta.
+                return; 
             }
 
-            // Ocultamos el mensaje de advertencia si todo está completo.
+            
             warningMessage.style.display = 'none';
 
             const correctAnswers = ['a', 'a', 'c', 'b', 'b', 'a', 'a', 'a', 'b', 'a'];
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const allInputs = form.querySelectorAll('input[type="radio"]');
         allInputs.forEach(input => {
-            input.disabled = true; // Deshabilitamos los inputs tras mostrar resultados.
+            input.disabled = true; 
         });
 
         const correctAnswers = ['a', 'a', 'c', 'b', 'b', 'a', 'a', 'a', 'b', 'a'];
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        form.querySelector('button[type="submit"]').style.display = 'none'; // Ocultar botón de enviar.
+        form.querySelector('button[type="submit"]').style.display = 'none'; 
     });
     
     resultModal.addEventListener('click', function(event) {
