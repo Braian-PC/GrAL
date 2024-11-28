@@ -23,25 +23,25 @@ document.addEventListener('DOMContentLoaded', function() {
     arautegiakBtn.addEventListener('click', function() {
         // Navegar a la página de reglamentos o mostrar modal
         console.log('Arautegiak clicked');
-        window.location.href = 'arauak.html'; // Descomentar y ajustar la URL según necesites
+        window.location.href = '/arauak'; // Descomentar y ajustar la URL según necesites
     });
 
     egutegiaBtn.addEventListener('click', function() {
         // Navegar al calendario o mostrar modal
         console.log('Egutegia clicked');
-        window.location.href = 'egutegia.html'; // Descomentar y ajustar la URL según necesites
+        window.location.href = '/egutegia'; // Descomentar y ajustar la URL según necesites
     });
 
     memoriakBtn.addEventListener('click', function() {
         // Navegar a las memorias o mostrar modal
         console.log('Memoriak clicked');
-        window.location.href = 'memoriak.html'; // Descomentar y ajustar la URL según necesites
+        window.location.href = '/memoriak'; // Descomentar y ajustar la URL según necesites
     });
 
     autoebaluazioaBtn.addEventListener('click', function() {
         // Navegar al cuestionario de autoevaluación o mostrar modal
         console.log('Autoebaluazioa clicked');
-        window.location.href = 'autoebaluazioa.html'; // Descomentar y ajustar la URL según necesites
+        window.location.href = '/autoebaluazioa'; // Descomentar y ajustar la URL según necesites
     });
 
 

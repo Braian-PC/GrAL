@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     ehuBtn.addEventListener('click', function() {
         // Navegar a la página de reglamentos o mostrar modal
         console.log('EHU arautegiak clicked');
-        window.location.href = 'arauak_UPV_EHU.html'; // Descomentar y ajustar la URL según necesites
+        window.location.href = 'arauak-upv-ehu'; // Descomentar y ajustar la URL según necesites
     });
 
     infoBtn.addEventListener('click', function() {
         // Navegar al calendario o mostrar modal
         console.log('info arautegiak clicked');
-        window.location.href = 'arauak_fakultatea.html'; // Descomentar y ajustar la URL según necesites
+        window.location.href = 'arauak-fakultatea'; // Descomentar y ajustar la URL según necesites
     });
 
 });
