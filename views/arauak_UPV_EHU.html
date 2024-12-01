@@ -22,13 +22,17 @@
             border-radius: 0;           /* Asegura que los bordes no sean redondeados */
             box-shadow: none;           /* Elimina sombras adicionales */
         }
+        
+        #navbar {
+        transition: transform 0.5s ease-in-out; /* Suavidad de 0.5 segundos */
+    }
     </style>
 
 </head>
 <body>
 
     <!-- Botón para abrir el menú lateral -->
-    <nav class="navbar navbar-dark bg-dark">
+    <nav id="navbar" class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid d-flex align-items-center justify-content-start">
             <!-- Botón para abrir el panel lateral -->
             <button class="bg-dark border-0 me-2 d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
@@ -42,7 +46,26 @@
             </div>
         </div>
     </nav>
+    <script>
+        // Variables para controlar el scroll
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById("navbar");
     
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+    
+            if (currentScrollY > lastScrollY) {
+                // Scroll hacia abajo: ocultar la navbar
+                navbar.style.transform = "translateY(-100%)"; // Ocultar
+            } else {
+                // Scroll hacia arriba: mostrar la navbar
+                navbar.style.transform = "translateY(0)"; // Mostrar
+            }
+    
+            // Actualizar la posición del último scroll
+            lastScrollY = currentScrollY;
+        });
+    </script>
 
     <!-- Offcanvas Sidebar -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
