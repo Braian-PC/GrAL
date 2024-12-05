@@ -3,7 +3,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    color: #000;
+    color: #343a40;
     border: none;
     text-align: left;
     padding: 10px 20px;
@@ -18,7 +18,7 @@
     width: 40px;
 }
 .offcanvas {
-    background-color: #000; /* Fondo negro para el menú */
+    background-color: #212529; /* bg-dark en Hex */
     color: #fff; /* Texto blanco para el menú */
 }
 .offcanvas a {
@@ -28,7 +28,7 @@
     color: #00aaff; /* Color diferente al hacer hover en los enlaces */
 }
 .offcanvas-header {
-    background-color: #212529;
+    background-color: #212529; /* bg-dark en Hex */
     color: #fff;
 }
 
@@ -42,7 +42,26 @@ button.bg-dark:hover i {
     color: #f8f9fa; /* Opcional: Cambiar el color */
     transition: transform 0.3s ease, color 0.3s ease;
 }
-i{
+i {
     font-size: 1.6em;
     margin-right: 20px;
+}
+
+
+/* Cambiar el fondo de todos los list-group-item */
+.offcanvas .list-group-item {
+    background-color: #212529; /* bg-dark en Hex */
+    color: #fff; /* Texto blanco */
+    border: none; /* Eliminar el borde */
+}
+
+
+/* Si deseas cambiar los fondos de los submenús */
+.offcanvas .collapse .list-group-item {
+    background-color: #212529; /* bg-dark en Hex */
+
+}
+
+.offcanvas-header {
+    background-color: #343a40;
 }
