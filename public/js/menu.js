@@ -60,8 +60,6 @@ const navbarHTML = `
 
 `;
 
-
 window.onload = () => {
     document.getElementById('menu').innerHTML = navbarHTML;
 }
-
