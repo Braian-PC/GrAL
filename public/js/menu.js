@@ -1,4 +1,3 @@
-
 const navbarHTML = `
     
     <!-- Offcanvas Sidebar -->
