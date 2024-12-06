@@ -24,8 +24,8 @@
         }
         
         #navbar {
-        transition: transform 0.5s ease-in-out; /* Suavidad de 0.5 segundos */
-    }
+            transition: transform 0.5s ease-in-out; /* Suavidad de 0.5 segundos */
+        }
     </style>
 
 </head>
@@ -46,26 +46,7 @@
             </div>
         </div>
     </nav>
-    <script>
-        // Variables para controlar el scroll
-        let lastScrollY = window.scrollY;
-        const navbar = document.getElementById("navbar");
-    
-        window.addEventListener("scroll", () => {
-            const currentScrollY = window.scrollY;
-    
-            if (currentScrollY > lastScrollY) {
-                // Scroll hacia abajo: ocultar la navbar
-                navbar.style.transform = "translateY(-100%)"; // Ocultar
-            } else {
-                // Scroll hacia arriba: mostrar la navbar
-                navbar.style.transform = "translateY(0)"; // Mostrar
-            }
-    
-            // Actualizar la posición del último scroll
-            lastScrollY = currentScrollY;
-        });
-    </script>
+    <script src="/js/scroll-menu.js"></script>
 
     <!-- Offcanvas Sidebar -->
      <div id="menu"></div>
