@@ -39,6 +39,15 @@
     <!-- Offcanvas Sidebar -->
     <div id="menu"></div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Wait for the menu to be inserted
+            setTimeout(() => {
+                updateActiveLink('memoriak');
+            }, 0);
+        });
+    </script>
+
     <div class="header bg-dark bg-opacity-50" id="intro">
         <h1 class="persistent-text mb-4 text-white"> Gradu Amaierako Lana <br> Aurreko GrAL-en memorien kontsulta</h1>
     </div>
