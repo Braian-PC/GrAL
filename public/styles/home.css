@@ -22,12 +22,15 @@ p {
 }
 
 .last-p{
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+}
+.last-d{
+    margin-bottom: 100px;
 }
 
 .header {
     position: relative;
-    height: 40vh;
+    height: 50vh;
     background-size: 40vh;
     display: flex;
     flex-direction: column;
@@ -97,9 +100,25 @@ footer p{
 a {
     color: #00aaff;
     text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
+
+a:hover {
+    color: #0088cc; 
+    text-decoration: underline; 
+}
+
 strong {
     font-weight: bold;
+}
+
+.btn-white {
+    background-color: #fff;
+    border: none;                /* Elimina todos los bordes */
+    border-bottom: 2px solid #ccc; /* Solo deja un borde inferior */
+    color: #000;                /* Color del texto */
+    border-radius: 0;           /* Asegura que los bordes no sean redondeados */
+    box-shadow: none;           /* Elimina sombras adicionales */
 }
 
 
@@ -144,4 +163,5 @@ strong {
 
 li {
     margin-bottom: 1em;
+    margin-left: 25px;
 }

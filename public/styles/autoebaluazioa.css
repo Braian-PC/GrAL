@@ -59,3 +59,8 @@
 .close-button:hover {
     color: red;
 }
+
+.goiburua, navbar {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+}
